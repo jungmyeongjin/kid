@@ -280,7 +280,7 @@ section .do-me .do-inner:hover i{/*마우스를 올릴 때 색이 변하도록 �
 
 /*background*/
 .bg{
-    background:url('images/main.jpg') center center;
+    background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)) /*사진에 검은 줄 추가됨 */, url('images/main.jpg') center center;
     background-size: contain;
     background-attachment: fixed;
     height:650px;
