@@ -280,7 +280,7 @@ section .do-me .do-inner:hover i{/*마우스를 올릴 때 색이 변하도록 �
 
 /*background*/
 .bg{
-    background-image:url('images/bg.jpg') center center;
+    background:url('images/main.jpg') center center;
     background-size: contain;
     background-attachment: fixed;
     height:650px;
