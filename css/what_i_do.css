@@ -1,0 +1,43 @@
+section{ /*하나로 합칠 때는 필요없는 부분(2n번째 child 배경이 흰-회 번갈아가서 나오도록 했으니까)*/
+    background-color:#f8f8f8;
+}
+/*부모 요소가 자식 요소의 높이를 올바르게 찾지 못함 -> 플롯 속성의 영향력을 초기화*/
+section .do-me::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+section .do-me .do-inner{
+    width:30%;
+    background-color:#fff;
+    padding:2rem;
+    float:left;
+    margin-right:5%; /*한 줄에 2개만 오고 줄 바꿈된다. margin-right가 105가 되니까 마지막은 마진이 없어야함*/
+    cursor:pointer;
+}
+
+section .do-me .do-inner:last-child{ /* margin-right가 105가 되니까 마지막은 마진이 없어야함*/
+    margin-right:0;
+}
+
+/*아이콘 요소 폰트 조정*/
+section .do-me .do-inner .icon i{
+    font-size:2.5rem;
+    color:#ff6a6a;
+}
+section .do-me .do-inner .content h3{
+    font-size:2rem;
+    margin: 1rem 0;
+}
+section .do-me .do-inner .content p{
+    font-size:1.15rem;
+}
+
+section .do-me .do-inner:hover{/*마우스를 올릴 때 색이 변하도록 함*/
+    background-color: lightcoral;
+    color:white;
+}
+
+section .do-me .do-inner:hover i{/*마우스를 올릴 때 색이 변하도록 함*/
+    color:white;
+}

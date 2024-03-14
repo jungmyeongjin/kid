@@ -1,0 +1,483 @@
+
+/* style.css는 공통처럼 사용된다!! */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+a, a:link, a:visited{
+    color:inherit; /* 부모 요소의 색상 상속*/
+    text-decoration:none;
+}
+
+li{
+    list-style:none;
+}
+.container{
+    width:1140px; 
+    margin:0 auto; /* 줄어드는 영역이 항상 웹페이지의 중앙에 오도록 */
+}
+
+/*header.css*/
+header{
+    position: fixed; /*top 0에서 최상위에 붙도록!! p.531 참고 */
+    top:0; 
+    width:100%;
+    padding:1rem;
+}
+header .container{ /* 'SU'와 다른메뉴들이 한 줄에 나란히 들어가도록 함. header.container로 안 붙이고 하니까 한 줄에 안 들어감 왜지*/
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+   }
+
+header button{
+    background-color:transparent;
+    border:0;
+    cursor:pointer;
+    color:white;  /*추가한 부분*/
+}
+header h1 button{ /* 'SU'글자 폰트 꾸미기 */
+    font-size:2rem;
+    font-weight:bold;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav ul li{ /* 메뉴끼리 간격 주기*/
+    padding:10px;
+}
+
+header nav ul li button{
+    font-size: 1.2rem;
+}
+
+header.active{ /* 스크롤 효과 추가 */
+    background-color: rgba(0,0,0);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+/*header.css 끝*/
+
+/*main.css*/
+main{
+    width:100%;
+    height:100vh;
+    color:white;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) /*사진에 검은 줄 추가됨*/, url('../images/bg.jpg') center center;
+    background-size: contain;
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 이미지 가운데 정렬 */
+    display: flex; /*텍스트 정렬*/
+    justify-content: center;
+    align-items:center; 
+    text-align: center;
+}
+
+.container1 h4, .container1 h2 {
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다. */
+    margin-right: 15rem;/* 텍스트를 오른쪽으로 5rem 만큼 이동시킵니다. */
+}
+
+.container1 p{
+    text-align: left; /* 텍스트를 왼쪽으로 정렬합니다. */
+    margin-left: 7rem;/* 텍스트를 오른쪽으로 5rem 만큼 이동시킵니다. */
+}
+
+.container1 button.download {
+    text-align: left; 
+    margin-right: 15rem;
+}
+
+main h4{
+    font-size:2rem;
+    text-align: 5rem;
+}
+main h2{
+    font-family: "Poppins", sans-serif;
+    font-size:3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;/*자간*/
+}
+main p{
+    max-width: 500px;
+    margin: 0 auto;
+    font-size:1.25rem;
+}
+main button.download{
+    background-color:transparent;
+    border: 3px solid white;
+    border-radius:20px;
+    padding: 1rem 2rem;
+    margin-top:3rem;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+main button.mouse{
+    background-color:transparent;
+    border:none;
+    font-size:2rem;
+    position:absolute; /*메인 영역의 최하단에 위치*/
+    bottom:1rem;
+    left:50%;
+    transform:translateX(-20%);
+    color:white;
+    animation:upDown 1s ease-in-out infinite; /*애니메이션 정의해서 마우스가 움직이는 부분 구현*/
+}
+
+main h2 span::after{ /*커서 모양 만들고자함.  span 컨텐츠가 끝나기 직전에 추가하면 된다.*/
+    content:""; /*비어있는 내용 만듦*/
+    height:40px;
+    width:3px;
+    background-color: white;
+    display: inline-block; /*span태그는 인라인 성격 가진 태그임*/
+    animation: blink 0.7s ease-in-out infinite;/*만든 커서가 깜빡이도록*/
+}
+
+@keyframes blink { /*만든 커서가 깜빡이도록*/
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes upDown{ /*애니메이션 정의해서 마우스가 움직이는 부분 구현*/
+      0%{
+        bottom:1rem;
+      }
+      50%{
+        bottom:1.5rem;
+      }
+      100%{
+        bottom:1rem;
+      }
+}
+/*main.css 끝*/
+
+
+/*about_me.css*/
+section{
+    font-family:'Poppins', sans-serif;
+    padding:5rem 0;
+}
+section:nth-child(2n){/*배경 색이 흰색-회색 반복됨*/
+    background-color: #f8f8f8;
+}
+section .title{
+    margin-bottom: 3rem;
+}
+
+section .about-self::After{
+    content:"";
+    clear:both;
+    display:block;
+}
+
+section .title h4{
+    font-size: 1.35rem;
+    color:#ed4848;
+    position: relative;
+}
+section .title h2{
+    font-size: 3.5rem;
+}
+section .title p{
+    font-size: 1.15rem;
+}
+
+
+/* 위치 설정*/
+section .about-self .left{
+    width:50%;
+    float:left;
+}
+section .about-self /*여기 한 칸 띄어쓰는거 중요!*/.left img{
+    width:100%;
+}
+section .about-self .right{
+    width:50%;
+    float:left;
+    padding: 0 2rem;
+}
+
+/* 폰트 꾸미기 */
+section .about-self .right h3{
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+section .about-self .right h3 strong{
+    color:#ed4848;
+}
+section/*여기 한 칸 띄어쓰기 중요*/ .about-self .right p{
+    font-size: 1.15rem;
+    margin: 1rem 0;
+}
+section .about-self .right .social a{
+    font-size: 2.5rem;
+    margin-right:0.2rem;
+}
+/*about_me.css 끝. 원래 about_me.css에 있던 건데 내용 ctrl+x해서 지운 후에 가져옴*/
+
+/*what_i_do*/
+/*부모 요소가 자식 요소의 높이를 올바르게 찾지 못함 -> 플롯 속성의 영향력을 초기화*/
+section .do-me::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+section .do-me .do-inner{
+    width:30%;
+    background-color:#fff;
+    padding:2rem;
+    float:left;
+    margin-right:5%; /*한 줄에 2개만 오고 줄 바꿈된다. margin-right가 105가 되니까 마지막은 마진이 없어야함*/
+    cursor:pointer;
+}
+
+section .do-me .do-inner:last-child{ /* margin-right가 105가 되니까 마지막은 마진이 없어야함*/
+    margin-right:0;
+}
+
+/*아이콘 요소 폰트 조정*/
+section .do-me .do-inner .icon i{
+    font-size:2.5rem;
+    color:#ff6a6a;
+}
+section .do-me .do-inner .content h3{
+    font-size:2rem;
+    margin: 1rem 0;
+}
+section .do-me .do-inner .content p{
+    font-size:1.15rem;
+}
+
+section .do-me .do-inner:hover{/*마우스를 올릴 때 색이 변하도록 함*/
+    background-color: lightcoral;
+    color:white;
+}
+
+section .do-me .do-inner:hover i{/*마우스를 올릴 때 색이 변하도록 함*/
+    color:white;
+}
+
+/*background*/
+.bg{
+    background:url('../images/main.jpg') center center;
+    background-size: contain;
+    background-attachment: fixed;
+    height:650px;
+}
+/*portfolio*/
+section .portfolio-me .portfolio-inner{
+    width:30%;
+    margin-right:5%;
+    background-color: #fff;
+    float:left; /*아이템을 한 줄로 나란히 배치*/
+    padding:1rem 1rem 1.5rem 1rem;
+    border: 1px solid #ccc;
+    margin-bottom:3rem;
+}
+
+section.portfolio-me::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+section .portfolio-me .portfolio-inner:nth-child(3n){
+    margin-right:0;
+}
+ 
+section .portfolio-me .portfolio-inner img{
+    width:100%;
+    display:block;
+}
+section .portfolio-me .portfolio-inner strong{
+    color:#ff6a6a;
+    margin: 0.5rem 0;
+    display:block;
+}
+section .portfolio-me .portfolio-inner h3{
+    font-size:1.75rem;
+}
+
+/*contact_with_me.css*/
+section .contact-me::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+section .contact-me .left{
+    width:30%;
+    float:left;
+}
+
+section .contact-me .left .card{ /*아이콘과 글이 한 줄로 적히도록*/
+    border:1px solid #ccc;
+    padding:1rem;
+    display:flex;
+    align-items:center;
+    margin-bottom:1.25rem;
+}
+
+section .contact-me .left .card .icon{ /*아이콘과 글이 한 줄로 적히도록*/
+  font-size:2rem;
+  margin-right:15px;
+}
+
+section .contact-me .right{
+    width:65%;
+    float:left;
+    margin-left:5%;
+    margin-bottom:2rem;
+    border:1px solid #ccc;
+    padding:1rem; 
+}
+
+section .contact-me .right .form-group{ /*칸끼리 (위아래) 간격 설정*/
+    margin-bottom:1.25rem; 
+}
+
+section .contact-me .right .form-group label{
+    display:block;
+    margin-bottom: 0.85rem;
+}
+section .contact-me .right .form-group input{
+    width:100%;
+    padding:0.625rem;
+    outline:none;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+section .contact-me .right .form-group textarea{
+    height:300px;
+    width:100%;
+    outline:none;
+    resize:none; /*사용자가 레이아웃 마음대로 못 바꾸게 함*/
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+section .contact-me .right .form-group input:focus, section .contact-me .right .form-group textarea:focus{
+    border:1px solid #719ECE;/*입력 요소에 커서가 활성화되면 효과 추가*/
+    box-shadow:0 0 10px #719ECE;
+  }
+
+section .contact-me .right button{ /*버튼 꾸미기*/
+    width:100%;
+    padding:1rem;
+    background-color:#f78b00;
+    border:none;
+    color:white;
+}
+
+@media screen and (max-width:1140px){
+    main .container{
+        width:992px;
+    }
+    section .container{
+        width:600px;
+    }
+    section .about-self .left{
+        width:100%;
+        margin-bottom: 1.5rem;
+    }
+    section .about-self .rigft{
+        width:100%;
+        padding:0;
+    }
+    section .do-me .do-inner{
+        width:48%;
+        margin-right:0;
+        margin-bottom:1.5rem;
+    }
+    section .do-me .do-inner:nth-child(2n+1){
+        margin-right:4%;
+    }
+    section .portfolio-me .portfolio-inner{
+        width:48%;
+        margin-right:0;
+    }
+    section .do-me .portfolio_inner:nth-child(2n+1){
+        margin-right:4%;
+    }
+    section .contact-me .left{
+        width:100%;
+    }
+    section .contact-me .right{
+        width:100%;
+        margin-left:0;
+    }
+}
+@media screen and (max-width:992px){
+    html{
+        font-size:14px;
+    }
+    main .container{
+        width:768px;
+    }
+    section .portfolio-me .portfolio-inner{
+        width:100%;
+    }
+}
+@media screen and (max-width:768px){
+    html{
+        font-size:13px;
+    }
+    main .container{
+        width:576px;
+    }
+    section .container{
+        width:400px;
+    }
+    section .do-me .do-inner{ 
+        width:100%;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:576px){
+    html{
+        font-size:12px;
+    }
+    main .container{
+        width:400px;
+    }
+    section .container{
+        width:360px;
+    }
+}
+@media screen and (max-width:400px){
+    html{
+        font-size:11px;
+    }
+    main .container{
+        width:320px;
+    }
+    section .container{
+        width:320px;
+    }
+    main h4{
+        font-size:1.5rem;
+    } 
+    section .title h2{
+        font-size:3rem;
+    }
+}
