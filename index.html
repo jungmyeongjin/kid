@@ -3,9 +3,10 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>삼디마켓</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--아이콘 사용하기 위해서 cdjns에서 코드 카피-->
    <link rel="stylesheet" href="style.css"> <!--연결-->
+   <link rel="stylesheet" href="style2.css"> <!--연결-->
 </head>
 <body>
     <!--header-->
@@ -31,13 +32,13 @@
      </header>
     <!--main-->
     <main id="main">
-      <div class="container1">
+      <div class="container_main">
           <h4>환영해요</h4>
           <h2>3D로 즐겨요 <span><!--object kid는 변하는 부분--></span></h2><!--텍스트 입력 효과를 구현하기 위해 span태그의 텍스트 삭제-->
           <p>물건의 전체적인 모습을 볼 수 있어요! <!--alt+z--> </p>
           <p>결함이 어느정도 어느부분인지 알기 쉬워요! <!--alt+z--> </p>
           <p>진짜 물건이 있어야 3D렌더링이 가능해 안전해요! <!--alt+z--> </p>
-          <button class="download">사용하러 가기</button>
+          <button class="download" onclick="showSecondScreen()">사용하러 가기</button>
       </div>
     </main>
     <!--about_me-->
@@ -151,7 +152,86 @@
         </div>
      </section>
    
-     
+     <!--2번째 화면 main-->
+     <section id="second_main"  style="display: none;">
+        <div class="second_main_fix">
+         <div class="container2">
+            <h1>
+                <button data-animation-scroll="true" data-target="#main">삼디마켓</button>
+            </h1>
+            <h3>
+                <input type="search" placeholder="상품을 검색해보세요" required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </h3>
+            <nav>
+                <ul>
+                    <li>
+                        <button id="show" data-animation-scroll="true">글올리기</button>
+                    </li>   
+                 </ul>
+            </nav>
+         </div>
+        </div>
+    </section>
+
+<!--2번째 화면 상품목록-->
+    <section id="list"  style="display: none">
+        <div class="container2">
+            <div class="banner">
+                <img src="images/banner.jpg" alt="내 사진"> <!--배너 이미지-->
+            </div>
+            
+            <h1>등록된 상품</h1>
+            <div class="itemlist">
+              <div class="product_card">
+                  <img class="product_img" src="images/thing1.jpg">
+                  <div class="product_contents">
+                    <span class="product_name">빨래 건조대</span>
+                    <span class="product_price">30,000원</span>
+                  </div>
+             
+              </div>
+              <div class="product_card">
+                <img class="product_img" src="images/thing2.jpg">
+                <div class="product_contents">
+                <span class="product_name">인형</span>
+                <span class="product_price">30,000원</span>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="images/thing3.jpg">
+                <div class="product_contents">
+                <span class="product_name">의자</span>
+                <span class="product_price">30,000원</span>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="images/thing4.jpg">
+                <div class="product_contents">
+                <span class="product_name">신발</span>
+                <span class="product_price">30,000원</span>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="images/thing5.jpg">
+                <div class="product_contents">
+                <span class="product_name">휴대폰</span>
+                <span class="product_price">30,000원</span>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="images/thing6.png">
+                <div class="product_contents">
+                <span class="product_name">보조기</span>
+                <span class="product_price">30,000원</span>
+                </div>
+            </div>
+            </div>  
+        </div>
+    </section>
+
+
+
      <script src="script.js"></script>
 </body>
 </html>

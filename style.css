@@ -89,17 +89,17 @@ main{
     text-align: center;
 }
 
-.container1 h4, .container1 h2 {
+.container_main h4, .container_main h2 {
     text-align: left; /* 텍스트를 왼쪽으로 정렬합니다. */
     margin-right: 15rem;/* 텍스트를 오른쪽으로 5rem 만큼 이동시킵니다. */
 }
 
-.container1 p{
+.container_main p{
     text-align: left; /* 텍스트를 왼쪽으로 정렬합니다. */
     margin-left: 7rem;/* 텍스트를 오른쪽으로 5rem 만큼 이동시킵니다. */
 }
 
-.container1 button.download {
+.container_main button.download {
     text-align: left; 
     margin-right: 15rem;
 }

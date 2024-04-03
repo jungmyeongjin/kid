@@ -64,3 +64,27 @@ for(let i=0; i<scrollMoveEl.length; i++){
     animationMove(this.dataset.target); //this가 이벤트가 발생한 자기 자신을 의미 =e.target
   });
 }
+
+//화면 1 숨기고 화면2 나타내기
+function showSecondScreen() {
+  const style = document.querySelector('link[href="style.css"]');
+  if (style) {style.disabled = true;} // 스타일 시트 비활성화
+  const style2 = document.querySelector('link[href="style2.css"]');
+  if (style2) { style2.disabled = false;} // 스타일 시트 활성화
+  var containers = document.querySelectorAll('.container, .container_main, #features, #portfolio');
+  containers.forEach(function(container) {container.style.display = 'none'; }); // 화면1 숨기기.
+  document.querySelectorAll('#second_main, #list,#upload').forEach(function(element) { // 화면2 보이기
+                            element.style.display = 'block';});
+}
+
+
+function show() {
+  document.querySelector(".background").classList.add("show");
+}
+
+function close() {
+  document.querySelector(".background").classList.remove("show");
+}
+
+document.getElementById("show").addEventListener("click", show);
+document.getElementById("close").addEventListener("click", close);
