@@ -90,8 +90,10 @@ function close() {
 document.getElementById("show").addEventListener("click", show);
 document.getElementById("close").addEventListener("click", close);
 
-//-------------글 올리기 - 상품 목록 추가
-// 업로드 버튼 클릭 시 이벤트 처리
+//-------------글 올리기 - 상품 목록 추가. 업로드 버튼 클릭 시 이벤트 처리
+// '글올리기' 버튼 클릭 시 이벤트 처리
+var productIndex = 1;
+
 document.getElementById("uploadButton").addEventListener("click", function() {
   // 입력값 가져오기
   var productName = document.getElementById("productName").value;
@@ -139,11 +141,21 @@ document.getElementById("uploadButton").addEventListener("click", function() {
   var itemList = document.querySelector("#list .itemlist"); // #itemlist를 찾습니다.
   itemList.appendChild(newProductCard);
 
+     // 클릭 이벤트 추가
+  newProductCard.addEventListener('click', function() {
+    var productId = this.dataset.id;
+    window.location.href = `/products/${productId}`;
+});
+
+
   // 입력 폼 초기화
   document.getElementById("productName").value = "";
   document.getElementById("productPrice").value = "";
   document.getElementById("productDetail").value = "";
   document.getElementById("productImage").value = ""; // 파일 입력 필드 초기화
+
+  // 인덱스 증가
+  productIndex++;
 
   close();
 });
