@@ -38,7 +38,7 @@
           <p>물건의 전체적인 모습을 볼 수 있어요! <!--alt+z--> </p>
           <p>결함이 어느정도 어느부분인지 알기 쉬워요! <!--alt+z--> </p>
           <p>진짜 물건이 있어야 3D렌더링이 가능해 안전해요! <!--alt+z--> </p>
-          <button class="download" onclick="showSecondScreen()">사용하러 가기</button>
+          <button class="download" onclick="window.location.href='/main';">사용하러 가기</button>
       </div>
     </main>
     <!--about_me-->
@@ -152,65 +152,9 @@
         </div>
      </section>
    
-     <!--2번째 화면 main-->
-     <section id="second_main"  style="display: none;">
-        <div class="second_main_fix">
-         <div class="container2">
-            <h1>
-                <button data-animation-scroll="true" data-target="#main">삼디마켓</button>
-            </h1>
-            <h3>
-                <input type="search" placeholder="상품을 검색해보세요" required>
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </h3>
-            <nav>
-                <ul>
-                    <li>
-                        <button id="show" data-animation-scroll="true">글올리기</button>
-                    </li>   
-                 </ul>
-            </nav>
-         </div>
-        </div>
-    </section>
-
-<!--2번째 화면 상품목록-->
-    <section id="list"  style="display: none">
-        <div class="container2">
-            <div class="banner">
-                <img src="images/banner.jpg" alt="내 사진"> <!--배너 이미지-->
-            </div>
-            
-            <h1>등록된 상품</h1>
-            <div class="itemlist">
-               <!--사용자가 올리는 상품 목록 연동-->
-             </div>
-            
-        </div>
-    </section>
-
-    <section id="upload" style="display: none">
-        <div class="container2">
-            <div class="background">
-                <div class="window">
-                  <div class="popup">
-                    <label for="productName">상품명:</label> <!--명시적방법. for속성=상호작용 요소의 id속성-->
-                    <input type="text" id="productName" name="productName" required><br>
-                    <label for="productPrice">가격:</label>
-                    <input type="text" id="productPrice" name="productPrice" required><br>
-                    <label for="productDetail">설명:</label>
-                    <textarea id="productDetail" name="productDetail" required></textarea><br>
-                    <label for="productImage">이미지</label>
-                    <input type="file" id="productImage" name="productImage" required>
-
-                    <button type="submit" id="uploadButton">업로드</button>
-                    <button id="close">취소</button>
-                  </div>
-                <div>
-            <div>
-          </div>
-    </section>
+    
 
      <script src="script.js"></script>
 </body>
 </html>
+

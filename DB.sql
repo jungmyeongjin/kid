@@ -11,5 +11,4 @@ CREATE TABLE `productdetail` (
 
 -- Dumping data for table `product` :author_id에 해당하는 구체적 정보는 productlist 테이블에 저장(id,이름,프로필)
 INSERT INTO `productdetail` (`productname`, `price`, `description`) VALUES ('축구공', '1000', '축구공 팔아요');
-INSERT INTO `productdetail` (`productname`, `price`, `description`) VALUES ('농구공', '2000', '농구공 팔아요');
-INSERT INTO `productdetail` (`productname`, `price`, `description`) VALUES ('배구공', '3000', '배구공 팔아요');
+

@@ -141,35 +141,6 @@ main button.mouse{
     animation:upDown 1s ease-in-out infinite; /*애니메이션 정의해서 마우스가 움직이는 부분 구현*/
 }
 
-main h2 span::after{ /*커서 모양 만들고자함.  span 컨텐츠가 끝나기 직전에 추가하면 된다.*/
-    content:""; /*비어있는 내용 만듦*/
-    height:40px;
-    width:3px;
-    background-color: white;
-    display: inline-block; /*span태그는 인라인 성격 가진 태그임*/
-    animation: blink 0.7s ease-in-out infinite;/*만든 커서가 깜빡이도록*/
-}
-
-@keyframes blink { /*만든 커서가 깜빡이도록*/
-    0%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-@keyframes upDown{ /*애니메이션 정의해서 마우스가 움직이는 부분 구현*/
-      0%{
-        bottom:1rem;
-      }
-      50%{
-        bottom:1.5rem;
-      }
-      100%{
-        bottom:1rem;
-      }
-}
 /*main.css 끝*/
 
 

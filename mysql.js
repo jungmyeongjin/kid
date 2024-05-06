@@ -1,4 +1,5 @@
 // mysql을 동작시키기 위한 파일(연결, 데이터 표시 등)
+/*
 var mysql = require('mysql2'); // mysql 모듈을 mysql이라는 이름으로 사용하겠다. 
 var connection = mysql.createConnection({ // DB접속 시 필요한 정보를 createconnection 메서드에 인수로 전달
     host     : 'localhost', // DB가 있는 서버 주소
@@ -9,14 +10,14 @@ var connection = mysql.createConnection({ // DB접속 시 필요한 정보를 cr
 
 connection.connect(); // connection 변수를 이용해 connect 메서드를 호출해서 DB에 접속
 
-connection.query('SELECT * from productlist', function (error, results, fields) { //query 메서드로 DB에 질의문 전달. 
+connection.query('SELECT * from productdetail', function (error, results, fields) { //query 메서드로 DB에 질의문 전달. 
     if (error) {
         console.log(error);
     }
     console.log(results); // productdetail 테이블의 모든 데이터 읽어옴
 });
 
-connection.end(); // 작업 마쳤으면 접속 끊기
+connection.end(); // 작업 마쳤으면 접속 끊기*/
 
 
 /*
